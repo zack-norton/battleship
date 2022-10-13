@@ -1,8 +1,12 @@
 #include "../include/Board.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 Board::Board()
 {
+    shipCount = 5;
+
     gameBoard = new std::string*[10];
 
     for(int i = 0; i < 10; i++)
@@ -27,6 +31,22 @@ Board::~Board()
     }
 
     delete [] gameBoard;
+}
+
+void Board::randomizeShips()
+{
+    srand(time(nullptr));
+
+    int startRow = rand() % 10;
+    int startCol = rand() % 10;
+
+    bool up = (startRow - 5) >= 0;
+    bool down = (startRow + 5) < 10;
+    bool left = (startCol - 5) >= 0;
+    bool right = (startCol + 5) < 10;
+    
+
+
 }
 
 void Board::print()

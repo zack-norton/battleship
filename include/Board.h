@@ -11,8 +11,12 @@ class Board
         ~Board();
 
         void print();
+
+        void randomizeShips();
+
     private:
         std::string** gameBoard;
+        int shipCount;
 };
 
 #endif

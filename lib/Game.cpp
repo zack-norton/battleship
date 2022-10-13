@@ -14,5 +14,8 @@ Game::~Game()
 
 void Game::start()
 {
+    //randomize cpu boat positions
+    cpuBoard->randomizeShips();
+
     playerBoard->print();
 }
